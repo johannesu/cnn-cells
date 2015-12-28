@@ -9,7 +9,7 @@ from scipy.ndimage.morphology import distance_transform_edt
 
 # Can be turned into a generator to speed up things
 def generate(data_type="train",
-             boxsize=29,
+             box_size=29,
              positive_sample_radius=2,
              negative_sample_radius=6):
 
