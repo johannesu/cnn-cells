@@ -1,7 +1,7 @@
-# CNN segmentation of cell images
+# CNN cell detection
 
-This toy example shows how to train a 3-layered convolutional neural network in [Lasange](https://github.com/Lasagne/Lasagne) on cell images.
-After training the network performs segmentation using a sliding window.
+This code show how to train a cell detector using a convolutional neural network in Lasagne [Lasange](https://github.com/Lasagne/Lasagne).
+
 
 #### Getting started
 Look at [main.ipynb](main.ipynb).
@@ -11,13 +11,12 @@ Look at [main.ipynb](main.ipynb).
 * All patches of size `boxsize` within `positive radius` are sampled as `positive samples`
 * An equal number of `negative samples` are randomly sampled between `positive radius` and `negative radius`
 * A [convolutional neural network](network.py) is trained using the negative and positive samples
-* Given a new image a `boxsized` window is slided through each possible patch in the image.
-	* Each patch is passed through the trained network and given the most probable label.
+* Given a new image a `boxsized` window is slided through each possible patch in the image, generating a probability map
+* Local maxima in the probability map are marked as cell centers
 
+Note: There is no padding on the boundary so no detection is possible `boxsize/2` pixels from the image boundary.
 
 ![Description](images/description.png)
-
-
 
 #### Credit
 The network and code structure is based on Lasanges `MNIST` example
