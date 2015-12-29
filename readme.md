@@ -1,6 +1,6 @@
 # CNN cell detection
 
-This code show how to train a cell detector using a convolutional neural network in Lasagne [Lasange](https://github.com/Lasagne/Lasagne).
+This code show how to train a cell detector using a convolutional neural network in [Lasange](https://github.com/Lasagne/Lasagne).
 
 
 #### Getting started
