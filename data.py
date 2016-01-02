@@ -58,9 +58,7 @@ def generate(data_type="train",
 
     # Negative samples random sample in a band around each cell
     nbr_positives = len(samples_list)
-    
-    print(nbr_positives)
-    
+        
     while len(samples_list) < 2*nbr_positives:
         x = random.randint(image_border_margin, distance.shape[0] - image_border_margin)
         y = random.randint(image_border_margin, distance.shape[1] - image_border_margin)
@@ -70,7 +68,6 @@ def generate(data_type="train",
         if negative_sample_radius > d > positive_sample_radius:
             samples_list.append((x, y))
 
-	############
 	# Load negative samples
     matlab_data = matlabIo.loadmat(neg_path)
     negative_centres = matlab_data['samples']
@@ -90,7 +87,6 @@ def generate(data_type="train",
         for y in xrange(image_border_margin, distance.shape[1] - image_border_margin):
             if (distance[x][y] < positive_sample_radius):
                 samples_list.append((x, y))
-########################
 
 	# Fill in the ground truth labels
 	labels = np.ones(nbr_positives)
