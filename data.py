@@ -12,7 +12,7 @@ def make_distance_map(image_shape,
 
     # Distance transform
     f = np.ones(image_shape, bool)
-    for idx in xrange(centres.shape[1]):
+    for idx in range(centres.shape[1]):
         x = int(min(max(0, centres[0, idx]), image_shape[0] - 1))
         y = int(min(max(0, centres[1, idx]), image_shape[1] - 1))
 
@@ -83,8 +83,8 @@ def generate(data_type="train",
     # Positive samples within sample_radius from a cell centre.
     samples = []
     labels = []
-    for x in xrange(image_border_margin, img.shape[0] - image_border_margin):
-        for y in xrange(image_border_margin, img.shape[1] - image_border_margin):
+    for x in range(image_border_margin, img.shape[0] - image_border_margin):
+        for y in range(image_border_margin, img.shape[1] - image_border_margin):
             if (distance_to_positive[x][y] < sample_radius):
                 samples.append((x, y))
                 labels.append(1)
@@ -92,8 +92,8 @@ def generate(data_type="train",
     # Negative samples within sample_radius from negative annotated points
     nbr_positives = len(samples)
 
-    for x in xrange(image_border_margin, img.shape[0] - image_border_margin):
-        for y in xrange(image_border_margin, img.shape[1] - image_border_margin):
+    for x in range(image_border_margin, img.shape[0] - image_border_margin):
+        for y in range(image_border_margin, img.shape[1] - image_border_margin):
             if (distance_to_negative[x][y] < sample_radius):
                 samples.append((x, y))
                 labels.append(0)
