@@ -1,0 +1,7 @@
+jupyter
+scikit-image
+theano
+numpy
+lasagne
+matplotlib
+scipy
