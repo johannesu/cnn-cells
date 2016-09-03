@@ -2,9 +2,18 @@
 
 This code show how to train a cell detector using a convolutional neural network in [Lasagne](https://github.com/Lasagne/Lasagne).
 
+### Getting started
 
-#### Getting started
 Look at [main.ipynb](main.ipynb).
+
+#### Requirements
+
+* Python 2 or 3
+* The python packages in [requirements.txt](requirements.txt), if you have pip you can install them using:
+
+```shell
+pip3 install -r requirements.txt
+```
 
 ### Details
 * Each image is manually annotated with the center point of each cell as well as some hard negative examples
